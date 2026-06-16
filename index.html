@@ -1,190 +1,335 @@
+```html
 <!DOCTYPE html>
 <html lang="sl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project O-2706</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <style>
-    :root {
-      --bg: #050505;
-      --text: #f5f1e8;
-      --muted: #8f8a80;
-      --gold: #c9a45c;
-      --line: rgba(201, 164, 92, 0.28);
-    }
+<title>PROJECT O-2706</title>
 
-    * {
-      box-sizing: border-box;
-    }
+<style>
+:root {
+  --bg: #050505;
+  --text: #f5f1e8;
+  --muted: #8f8a80;
+  --gold: #c9a45c;
+  --line: rgba(201, 164, 92, 0.28);
+}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at top, rgba(201,164,92,0.12), transparent 35%),
-        var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Helvetica Neue", Arial, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    .wrap {
-      width: min(92vw, 760px);
-      padding: 48px 24px;
-    }
+body {
+  margin: 0;
+  min-height: 100vh;
 
-    .label {
-      font-size: 12px;
-      letter-spacing: 0.42em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 26px;
-    }
+  background:
+    radial-gradient(circle at top,
+      rgba(201,164,92,0.10),
+      transparent 35%),
+    var(--bg);
 
-    h1 {
-      font-size: clamp(42px, 9vw, 92px);
-      font-weight: 500;
-      letter-spacing: -0.06em;
-      margin: 0;
-      line-height: 0.95;
-    }
+  color: var(--text);
 
-    .date {
-      margin-top: 24px;
-      font-size: clamp(18px, 3vw, 26px);
-      color: var(--muted);
-      letter-spacing: 0.08em;
-    }
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Inter",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 
-    .divider {
-      height: 1px;
-      background: var(--line);
-      margin: 46px auto;
-      width: min(420px, 70%);
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
-    .countdown {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin: 0 auto;
-      max-width: 620px;
-    }
+  overflow: hidden;
+}
 
-    .unit {
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 22px 10px 18px;
-      background: rgba(255,255,255,0.025);
-      backdrop-filter: blur(10px);
-    }
+.wrap {
+  width: min(92vw, 760px);
+  padding: 48px 24px;
 
-    .num {
-      font-size: clamp(32px, 7vw, 58px);
-      font-weight: 500;
-      letter-spacing: -0.04em;
-    }
+  animation: fadeIn 1.8s ease;
+}
 
-    .txt {
-      margin-top: 8px;
-      font-size: 11px;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
 
-    .footer {
-      margin-top: 42px;
-      font-size: 15px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    @media (max-width: 560px) {
-      .countdown {
-        grid-template-columns: repeat(2, 1fr);
-      }
+.label {
+  font-size: 12px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 26px;
+}
 
-      .unit {
-        border-radius: 18px;
-      }
-    }
-  </style>
+h1 {
+  font-size: clamp(42px, 9vw, 92px);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  margin: 0;
+  line-height: 0.95;
+}
+
+.date {
+  margin-top: 24px;
+  font-size: clamp(18px, 3vw, 26px);
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+.divider {
+  height: 1px;
+  background: var(--line);
+  margin: 46px auto;
+  width: min(420px, 70%);
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 0 auto;
+  max-width: 620px;
+}
+
+.unit {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 22px 10px 18px;
+  background: rgba(255,255,255,0.02);
+
+  transition: all 0.25s ease;
+}
+
+.unit:hover {
+  transform: translateY(-2px);
+  border-color: rgba(201,164,92,0.5);
+}
+
+.num {
+  font-size: clamp(32px, 7vw, 58px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+
+  transition: all 0.25s ease;
+}
+
+.txt {
+  margin-top: 8px;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.footer {
+  margin-top: 42px;
+  font-size: 15px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.version {
+  margin-top: 36px;
+  font-size: 10px;
+  color: #222;
+  cursor: pointer;
+  user-select: none;
+}
+
+@media (max-width: 560px) {
+
+  .countdown {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .unit {
+    border-radius: 18px;
+  }
+}
+</style>
 </head>
 
 <body>
-  <main class="wrap">
-    <div class="label">Private access</div>
 
-    <h1>PROJECT<br />O-2706</h1>
+<main class="wrap">
 
-    <div class="date">27.06.2026 / 07:00</div>
+  <div class="label">Private Access</div>
 
-    <div class="divider"></div>
+  <h1>
+    PROJECT<br>
+    O-2706
+  </h1>
 
-    <section class="countdown">
-      <div class="unit">
-        <div class="num" id="days">00</div>
-        <div class="txt">Days</div>
+  <div class="date">
+    27.06.2026 / 07:00
+  </div>
+
+  <div class="divider"></div>
+
+  <section class="countdown">
+
+    <div class="unit">
+      <div class="num" id="days">00</div>
+      <div class="txt">Days</div>
+    </div>
+
+    <div class="unit">
+      <div class="num" id="hours">00</div>
+      <div class="txt">Hours</div>
+    </div>
+
+    <div class="unit">
+      <div class="num" id="minutes">00</div>
+      <div class="txt">Minutes</div>
+    </div>
+
+    <div class="unit">
+      <div class="num" id="seconds">00</div>
+      <div class="txt">Seconds</div>
+    </div>
+
+  </section>
+
+  <div class="footer" id="footerMessage"></div>
+
+  <div class="version" id="secretTrigger">
+    v0.2706
+  </div>
+
+</main>
+
+<script>
+
+const messages = [
+  "BE READY.",
+  "AWAIT INSTRUCTIONS.",
+  "STANDBY.",
+  "PREPARE ACCORDINGLY.",
+  "DO NOT MAKE OTHER PLANS.",
+  "FURTHER INFORMATION WILL FOLLOW.",
+  "ACCESS CONFIRMED.",
+  "T-MINUS ACTIVE."
+];
+
+document.getElementById("footerMessage").textContent =
+  messages[Math.floor(Math.random() * messages.length)];
+
+const targetDate =
+  new Date("2026-06-27T07:00:00+02:00").getTime();
+
+function pad(value) {
+  return String(value).padStart(2, "0");
+}
+
+function updateCountdown() {
+
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  if (distance <= 0) {
+
+    document.querySelector(".wrap").innerHTML = `
+      <div class="label">Access Granted</div>
+
+      <h1>
+        REPORT<br>
+        READY
+      </h1>
+
+      <div class="date">
+        27.06.2026 / 07:00
       </div>
-      <div class="unit">
-        <div class="num" id="hours">00</div>
-        <div class="txt">Hours</div>
-      </div>
-      <div class="unit">
-        <div class="num" id="minutes">00</div>
-        <div class="txt">Minutes</div>
-      </div>
-      <div class="unit">
-        <div class="num" id="seconds">00</div>
-        <div class="txt">Seconds</div>
-      </div>
-    </section>
 
-    <div class="footer">Be ready.</div>
-  </main>
+      <div class="divider"></div>
 
-  <script>
-    const targetDate = new Date("2026-06-27T07:00:00+02:00").getTime();
+      <div class="footer">
+        AWAIT INSTRUCTIONS.
+      </div>
+    `;
 
-    function pad(value) {
-      return String(value).padStart(2, "0");
+    return;
+  }
+
+  const days =
+    Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  const hours =
+    Math.floor(
+      (distance / (1000 * 60 * 60)) % 24
+    );
+
+  const minutes =
+    Math.floor(
+      (distance / (1000 * 60)) % 60
+    );
+
+  const seconds =
+    Math.floor(
+      (distance / 1000) % 60
+    );
+
+  document.getElementById("days").textContent =
+    pad(days);
+
+  document.getElementById("hours").textContent =
+    pad(hours);
+
+  document.getElementById("minutes").textContent =
+    pad(minutes);
+
+  document.getElementById("seconds").textContent =
+    pad(seconds);
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+let clicks = 0;
+
+document
+  .getElementById("secretTrigger")
+  .addEventListener("click", () => {
+
+    clicks++;
+
+    if (clicks === 5) {
+
+      alert(
+`ACCESS LEVEL 2
+
+PACKING CHECKLIST
+
+✓ Swimwear
+✓ Overnight Bag
+✓ Good Mood
+
+STATUS: PENDING
+
+Further instructions will follow.`
+      );
+
+      clicks = 0;
     }
+});
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
+</script>
 
-      if (distance <= 0) {
-        document.querySelector(".wrap").innerHTML = `
-          <div class="label">Access granted</div>
-          <h1>REPORT<br />READY</h1>
-          <div class="date">27.06.2026 / 07:00</div>
-          <div class="divider"></div>
-          <div class="footer">Await instructions.</div>
-        `;
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((distance / (1000 * 60)) % 60);
-      const seconds = Math.floor((distance / 1000) % 60);
-
-      document.getElementById("days").textContent = pad(days);
-      document.getElementById("hours").textContent = pad(hours);
-      document.getElementById("minutes").textContent = pad(minutes);
-      document.getElementById("seconds").textContent = pad(seconds);
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
 </body>
 </html>
+```

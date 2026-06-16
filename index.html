@@ -429,7 +429,7 @@ const emails = [
   {
     id: "mail1",
     unlock: "2026-06-16T00:00:00+02:00",
-    from: "od: moji.prijatelji@ekrivec.si",
+    from: "moji.prijatelji@ekrivec.si",
     subject: "Tok tok ... a je kdo doma?",
     date: "16. jun",
     preview: "Hej, se vidimo 27.6. Več informacij sledi kmalu ...",
@@ -606,7 +606,7 @@ function renderEmail(email) {
     <div class="meta">
       <div class="avatar">MK</div>
       <div class="meta-text">
-        <strong>${email.from}</strong>
+        od: ${email.from}</br>
         za: mene
       </div>
     </div>

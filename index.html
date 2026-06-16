@@ -7,209 +7,199 @@
 <title>PROJECT 2706</title>
 
 <style>
-
 :root {
-    --bg: #050505;
-    --text: #f5f1e8;
-    --muted: #8f8a80;
-    --gold: #c9a45c;
-    --line: rgba(201,164,92,0.28);
+  --bg: #050505;
+  --text: #f5f1e8;
+  --muted: #8f8a80;
+  --gold: #c9a45c;
+  --line: rgba(201,164,92,0.28);
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-
-    background:
-        radial-gradient(circle at top,
-        rgba(201,164,92,0.10),
-        transparent 35%),
-        var(--bg);
-
-    color: var(--text);
-
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "SF Pro Display",
-        "Inter",
-        "Helvetica Neue",
-        Arial,
-        sans-serif;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(201,164,92,0.10), transparent 35%),
+    var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter",
+    "Helvetica Neue", Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow-x: hidden;
 }
 
 .wrap {
-    width: min(92vw, 760px);
-    padding: 48px 24px;
-
-    animation: fadeIn 1.8s ease;
+  width: min(92vw, 760px);
+  padding: 48px 24px;
+  animation: fadeIn 1.8s ease;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .label {
-    font-size: 12px;
-    letter-spacing: 0.42em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 26px;
+  font-size: 12px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 26px;
 }
 
 h1 {
-    font-size: clamp(42px, 9vw, 92px);
-    font-weight: 500;
-    letter-spacing: -0.06em;
-    margin: 0;
-    line-height: 0.95;
+  font-size: clamp(42px, 9vw, 92px);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  margin: 0;
+  line-height: 0.95;
 }
 
 .date {
-    margin-top: 24px;
-    font-size: clamp(18px, 3vw, 26px);
-    color: var(--muted);
-    letter-spacing: 0.08em;
+  margin-top: 24px;
+  font-size: clamp(18px, 3vw, 26px);
+  color: var(--muted);
+  letter-spacing: 0.08em;
 }
 
 .divider {
-    height: 1px;
-    background: var(--line);
-    margin: 46px auto;
-    width: min(420px, 70%);
+  height: 1px;
+  background: var(--line);
+  margin: 46px auto;
+  width: min(420px, 70%);
 }
 
 .countdown {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-    margin: 0 auto;
-    max-width: 620px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 0 auto;
+  max-width: 620px;
 }
 
 .unit {
-    border: 1px solid var(--line);
-    border-radius: 22px;
-    padding: 22px 10px 18px;
-    background: rgba(255,255,255,0.02);
-
-    transition: all 0.25s ease;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 22px 10px 18px;
+  background: rgba(255,255,255,0.02);
+  transition: all 0.25s ease;
 }
 
 .unit:hover {
-    transform: translateY(-2px);
-    border-color: rgba(201,164,92,0.5);
+  transform: translateY(-2px);
+  border-color: rgba(201,164,92,0.5);
 }
 
 .num {
-    font-size: clamp(32px, 7vw, 58px);
-    font-weight: 500;
-    letter-spacing: -0.04em;
+  font-size: clamp(32px, 7vw, 58px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
 }
 
 .txt {
-    margin-top: 8px;
-    font-size: 11px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--gold);
+  margin-top: 8px;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
 }
 
 .footer {
-    margin-top: 42px;
-    font-size: 15px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--muted);
+  margin-top: 42px;
+  font-size: 15px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .status-note {
-    margin-top: 18px;
-    font-size: 11px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: rgba(201,164,92,0.65);
+  margin-top: 18px;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(201,164,92,0.65);
 }
 
 .access-level {
-    margin-top: 30px;
-
-    font-size: 12px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-
-    color: var(--gold);
-
-    cursor: pointer;
-
-    opacity: 0;
-    transition: opacity 1s ease;
+  margin-top: 30px;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
 .access-level.visible {
-    opacity: 1;
+  opacity: 1;
 }
 
 .terminal {
-    max-height: 0;
-    overflow: hidden;
-
-    margin-top: 24px;
-
-    border: 1px solid var(--line);
-    border-radius: 18px;
-
-    background: rgba(255,255,255,0.02);
-
-    transition: all 0.5s ease;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 24px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.02);
+  transition: all 0.5s ease;
 }
 
 .terminal.open {
-    max-height: 500px;
-    padding: 24px;
+  max-height: 520px;
+  padding: 24px;
 }
 
 .terminal pre {
-    margin: 0;
-    text-align: left;
-    color: var(--muted);
+  margin: 0;
+  text-align: left;
+  color: var(--muted);
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
 
-    font-family:
-        SFMono-Regular,
-        Consolas,
-        monospace;
+.cursor {
+  animation: blink 1s steps(1) infinite;
+}
 
-    line-height: 1.8;
-    white-space: pre-wrap;
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 @media (max-width: 560px) {
+  .countdown {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .countdown {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .unit {
+    border-radius: 18px;
+  }
 
-    .unit {
-        border-radius: 18px;
-    }
+  .terminal.open {
+    padding: 18px;
+  }
+
+  .terminal pre {
+    font-size: 12px;
+  }
 }
-
 </style>
 </head>
 
@@ -217,147 +207,238 @@ h1 {
 
 <main class="wrap">
 
-    <div class="label">Private Access</div>
+  <div class="label">Private Access</div>
 
-    <h1>
-        PROJECT<br>
-        2706
-    </h1>
+  <h1>
+    PROJECT<br>
+    2706
+  </h1>
 
-    <div class="date">
-        27.06.2026
+  <div class="date">27.06.2026</div>
+
+  <div class="divider"></div>
+
+  <section class="countdown">
+    <div class="unit">
+      <div class="num" id="days">00</div>
+      <div class="txt">Days</div>
     </div>
 
-    <div class="divider"></div>
-
-    <section class="countdown">
-
-        <div class="unit">
-            <div class="num" id="days">00</div>
-            <div class="txt">Days</div>
-        </div>
-
-        <div class="unit">
-            <div class="num" id="hours">00</div>
-            <div class="txt">Hours</div>
-        </div>
-
-        <div class="unit">
-            <div class="num" id="minutes">00</div>
-            <div class="txt">Minutes</div>
-        </div>
-
-        <div class="unit">
-            <div class="num" id="seconds">00</div>
-            <div class="txt">Seconds</div>
-        </div>
-
-    </section>
-
-    <div class="footer" id="footerMessage"></div>
-
-    <div class="status-note">
-        LIVE BRIEFING ACTIVE
+    <div class="unit">
+      <div class="num" id="hours">00</div>
+      <div class="txt">Hours</div>
     </div>
 
-    <div id="accessLevel" class="access-level">
-        ACCESS LEVEL 2 AVAILABLE
+    <div class="unit">
+      <div class="num" id="minutes">00</div>
+      <div class="txt">Minutes</div>
     </div>
 
-    <div id="terminal" class="terminal">
-<pre>
-────────────────────────────
-
-STATUS REPORT
-
-CLASSIFICATION ......... RESTRICTED
-
-DATE ................... 27.06.2026
-
-OVERNIGHT STAY ......... CONFIRMED
-SWIMWEAR ............... REQUIRED
-
-LOGISTICAL DETAILS ..... WITHHELD
-RETURN TIME ............ UNKNOWN
-
-────────────────────────────
-
-THIS INTERFACE WILL UPDATE
-OVER TIME.
-
-REVISIT ADVISED.
-
-────────────────────────────
-</pre>
+    <div class="unit">
+      <div class="num" id="seconds">00</div>
+      <div class="txt">Seconds</div>
     </div>
+  </section>
+
+  <div class="footer" id="footerMessage"></div>
+
+  <div class="status-note">
+    LIVE BRIEFING ACTIVE
+  </div>
+
+  <div id="accessLevel" class="access-level">
+    ACCESS LEVEL 2 AVAILABLE
+  </div>
+
+  <div id="terminal" class="terminal">
+    <pre id="terminalText"></pre>
+  </div>
 
 </main>
 
 <script>
-
 const messages = [
-    "BE READY.",
-    "AWAIT INSTRUCTIONS.",
-    "STANDBY.",
-    "PREPARE ACCORDINGLY.",
-    "DO NOT MAKE OTHER PLANS.",
-    "FURTHER INFORMATION WILL FOLLOW.",
-    "ACCESS CONFIRMED.",
-    "T-MINUS ACTIVE."
+  "BE READY.",
+  "AWAIT INSTRUCTIONS.",
+  "STANDBY.",
+  "PREPARE ACCORDINGLY.",
+  "DO NOT MAKE OTHER PLANS.",
+  "FURTHER INFORMATION WILL FOLLOW.",
+  "ACCESS CONFIRMED.",
+  "T-MINUS ACTIVE."
 ];
 
 document.getElementById("footerMessage").textContent =
-    messages[Math.floor(Math.random() * messages.length)];
+  messages[Math.floor(Math.random() * messages.length)];
 
-const targetDate =
-    new Date("2026-06-27T07:00:00+02:00").getTime();
+const targetDate = new Date("2026-06-27T07:00:00+02:00").getTime();
 
 function pad(value) {
-    return String(value).padStart(2, "0");
+  return String(value).padStart(2, "0");
 }
 
 function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
 
-    const now = new Date().getTime();
-    const distance = targetDate - now;
+  if (distance <= 0) {
+    document.querySelector(".wrap").innerHTML = `
+      <div class="label">Access Granted</div>
 
-    const days =
-        Math.floor(distance / (1000 * 60 * 60 * 24));
+      <h1>
+        REPORT<br>
+        READY
+      </h1>
 
-    const hours =
-        Math.floor((distance / (1000 * 60 * 60)) % 24);
+      <div class="date">27.06.2026</div>
 
-    const minutes =
-        Math.floor((distance / (1000 * 60)) % 60);
+      <div class="divider"></div>
 
-    const seconds =
-        Math.floor((distance / 1000) % 60);
+      <div class="footer">
+        AWAIT INSTRUCTIONS.
+      </div>
+    `;
+    return;
+  }
 
-    document.getElementById("days").textContent = pad(days);
-    document.getElementById("hours").textContent = pad(hours);
-    document.getElementById("minutes").textContent = pad(minutes);
-    document.getElementById("seconds").textContent = pad(seconds);
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((distance / (1000 * 60)) % 60);
+  const seconds = Math.floor((distance / 1000) % 60);
+
+  document.getElementById("days").textContent = pad(days);
+  document.getElementById("hours").textContent = pad(hours);
+  document.getElementById("minutes").textContent = pad(minutes);
+  document.getElementById("seconds").textContent = pad(seconds);
 }
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
 setTimeout(() => {
-    document
-        .getElementById("accessLevel")
-        .classList.add("visible");
+  document.getElementById("accessLevel").classList.add("visible");
 }, 10000);
 
-document
-    .getElementById("accessLevel")
-    .addEventListener("click", () => {
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-        document
-            .getElementById("terminal")
-            .classList.toggle("open");
+function getReadinessLevel() {
+  const start = new Date("2026-06-16T00:00:00+02:00").getTime();
+  const end = new Date("2026-06-27T07:00:00+02:00").getTime();
+  const now = new Date().getTime();
 
+  const progress = Math.max(0, Math.min(1, (now - start) / (end - start)));
+
+  return Math.round(70 + progress * 30);
+}
+
+function getLastAccess() {
+  return localStorage.getItem("project2706_last_access");
+}
+
+function saveAccess() {
+  const now = new Date();
+
+  localStorage.setItem(
+    "project2706_last_access",
+    now.toLocaleString("sl-SI")
+  );
+}
+
+function buildTerminalLines() {
+  const lastAccess = getLastAccess();
+  const readiness = getReadinessLevel();
+
+  const lines = [];
+
+  if (lastAccess) {
+    lines.push(`LAST ACCESS: ${lastAccess}`);
+    lines.push("");
+    lines.push("NEW INFORMATION AVAILABLE");
+    lines.push("");
+  }
+
+  lines.push("> verifying subject...");
+  lines.push("> subject identified");
+  lines.push("");
+  lines.push("> checking readiness...");
+  lines.push(`> readiness level: ${readiness}%`);
+  lines.push("");
+  lines.push("> loading briefing...");
+  lines.push("> complete");
+  lines.push("");
+  lines.push("STATUS REPORT");
+  lines.push("");
+  lines.push("CLASSIFICATION ......... RESTRICTED");
+  lines.push("");
+  lines.push("DATE ................... 27.06.2026");
+  lines.push("");
+  lines.push("OVERNIGHT STAY ......... CONFIRMED");
+  lines.push("SWIMWEAR ............... REQUIRED");
+
+  if (readiness >= 80) {
+    lines.push("ALCOHOL EXPOSURE ....... LIKELY");
+  }
+
+  if (readiness >= 85) {
+    lines.push("PHYSICAL ACTIVITY ...... POSSIBLE");
+  }
+
+  if (readiness >= 90) {
+    lines.push("DURATION ............... 1 NIGHT");
+  }
+
+  if (readiness >= 95) {
+    lines.push("PICKUP DETAILS ......... PENDING");
+  }
+
+  lines.push("");
+  lines.push("LOGISTICAL DETAILS ..... WITHHELD");
+  lines.push("RETURN TIME ............ UNKNOWN");
+  lines.push("");
+  lines.push("THIS INTERFACE WILL UPDATE");
+  lines.push("OVER TIME.");
+  lines.push("");
+  lines.push("REVISIT ADVISED.");
+
+  return lines;
+}
+
+async function typeTerminal() {
+  const terminal = document.getElementById("terminalText");
+  const lines = buildTerminalLines();
+
+  terminal.textContent = "";
+
+  for (const line of lines) {
+    terminal.textContent += line + "\n";
+    await sleep(line === "" ? 120 : 230);
+  }
+
+  terminal.innerHTML += '<span class="cursor">█</span>';
+
+  saveAccess();
+}
+
+let terminalIsTyping = false;
+
+document.getElementById("accessLevel").addEventListener("click", async () => {
+  const terminal = document.getElementById("terminal");
+  const isOpen = terminal.classList.contains("open");
+
+  if (terminalIsTyping) return;
+
+  if (!isOpen) {
+    terminal.classList.add("open");
+
+    terminalIsTyping = true;
+    await typeTerminal();
+    terminalIsTyping = false;
+  } else {
+    terminal.classList.remove("open");
+  }
 });
-
 </script>
 
 </body>

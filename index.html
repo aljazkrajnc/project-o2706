@@ -428,10 +428,10 @@ body {
 const emails = [
   {
     id: "mail1",
-    unlock: "2026-06-16T00:00:00+02:00",
+    unlock: "2026-06-17T00:00:00+02:00",
     from: "moji.prijatelji@ekrivec.si",
     subject: "Navodila #01",
-    date: "16. jun",
+    date: "17. jun",
     preview: "Živijo, se vidimo ...",
     body: `
       <p>Živijo,</p>
@@ -443,14 +443,14 @@ const emails = [
   },
   {
     id: "mail2",
-    unlock: "2026-06-17T07:00:00+02:00",
+    unlock: "2026-06-18T07:00:00+02:00",
     from: "moji.prijatelji@ekrivec.si",
     subject: "Navodila #02",
-    date: "17. jun",
+    date: "18. jun",
     preview: "Živijo, upam, da si ...",
     body: `
       <p>Živijo,</p>
-      <p>upam, da si se dobro naspal.</p>
+      <p>upamo, da si se dobro naspal.</p>
       <p>Dogodek bo zahteval celodnevno prisotnost.</p>
       <p>Toliko zaenkrat.</p>
       <p>Over&Out.</p>
@@ -459,14 +459,14 @@ const emails = [
   },
   {
     id: "mail3",
-    unlock: "2026-06-18T00:00:00+02:00",
-    from: "od: moji.prijatelji@ekrivec.si",
+    unlock: "2026-06-19T06:00:00+02:00",
+    from: "moji.prijatelji@ekrivec.si",
     subject: "Navodila #03",
-    date: "18. jun",
-    preview: "Nočitev je potrjena. Pakiranje bo potrebno.",
+    date: "19. jun",
+    preview: "Živijo, nočitev je potrjena ...",
     body: `
-      <p>Navodila #03</p>
-      <p>Nočitev je potrjena.</p>
+      <p>Živijo,</p>
+      <p>nočitev je potrjena.</p>
       <p>Pakiranje bo potrebno.</p>
       <p>Podrobnosti sledijo.</p>
       <p class="signature">— Tvoji zvesti prijatelji</p>
@@ -474,29 +474,29 @@ const emails = [
   },
   {
     id: "mail4",
-    unlock: "2026-06-19T00:00:00+02:00",
-    from: "od: moji.prijatelji@ekrivec.si",
+    unlock: "2026-06-20T07:30:00+02:00",
+    from: "moji.prijatelji@ekrivec.si",
     subject: "Navodila #04",
-    date: "19. jun",
-    preview: "Kopalke priporočene. Razlog ostaja zaupen.",
+    date: "20. jun",
+    preview: "Živijo, kopalke so priporočene ...",
     body: `
-      <p>Navodila #04</p>
+      <p>Živijo,</p>
       <p>Kopalke priporočene.</p>
       <p>Razlog ostaja zaupen.</p>
-      <p>Ne postavljaj preveč vprašanj.</p>
+      <p>Ne postavljaj si preveč vprašanj.</p>
       <p class="signature">— Tvoji zvesti prijatelji</p>
     `
   },
   {
     id: "mail5",
-    unlock: "2026-06-20T00:00:00+02:00",
-    from: "od: moji.prijatelji@ekrivec.si",
+    unlock: "2026-06-21T07:45:00+02:00",
+    from: "moji.prijatelji@ekrivec.si",
     subject: "Navodila #05",
-    date: "20. jun",
-    preview: "Udobna obutev priporočena. Povratek ni potrjen.",
+    date: "21. jun",
+    preview: "Živijo, jazbečarke so obvezne ...",
     body: `
-      <p>Navodila #05</p>
-      <p>Udobna obutev priporočena.</p>
+      <p>Živijo,</p>
+      <p>jazbečarke so obvezne.</p>
       <p>Povratek: ni potrjen.</p>
       <p>Morala: mora ostati visoka.</p>
       <p class="signature">— Tvoji zvesti prijatelji</p>
@@ -504,22 +504,22 @@ const emails = [
   },
   {
     id: "mail6",
-    unlock: "2026-06-21T00:00:00+02:00",
-    from: "od: moji.prijatelji@ekrivec.si",
+    unlock: "2026-06-26T07:46:00+02:00",
+    from: "moji.prijatelji@ekrivec.si",
     subject: "Zadnja navodila",
-    date: "21. jun",
-    preview: "Jutri bodi pripravljen. Nadaljnja navodila bodo podana pravočasno.",
+    date: "26. jun",
+    preview: "Živijo, jutri bodi pripravljen ...",
     body: `
-      <p>Zadnja navodila</p>
-      <p>Jutri bodi pripravljen.</p>
-      <p>Nadaljnja navodila bodo podana pravočasno.</p>
-      <p>Ne zamujaj.</p>
+      <p>Živijo,</p>
+      <p>jutri bodi pripravljen.</p>
+      <p>Pridemo, ko pridemo.</p>
       <p class="signature">— Tvoji zvesti prijatelji</p>
     `
   }
 ];
 
-const now = new Date();
+var now = new Date();
+now.setDate(now.getDate() + 15);
 const mailList = document.getElementById("mailList");
 const viewer = document.getElementById("viewer");
 const content = document.getElementById("content");
